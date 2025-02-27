@@ -3,3 +3,4 @@ openai
 pandas
 numpy
 PyPDF2
+transformers
