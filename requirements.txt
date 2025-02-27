@@ -1,6 +1,8 @@
 streamlit
 openai
-pandas
-numpy
 PyPDF2
 transformers
+torch
+numpy
+pandas
+scikit-learn
