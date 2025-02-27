@@ -40,7 +40,13 @@ def extract_text_from_pdf(pdf_file):
 
 # ✅ Enhanced Name Extraction
 def extract_candidate_details(resume_text):
+    # Try to find "Name:" followed by capitalized words (Full Name)
     name_match = re.search(r"(?i)(?:Name[:\s]*)?([A-Z][a-z]+(?:\s[A-Z][a-z]+)*)", resume_text)
+    
+    # If the above pattern fails, try extracting the first capitalized words (assuming it's a name)
+    if not name_match:
+        name_match = re.search(r"([A-Z][a-z]+(?:\s[A-Z][a-z]+)*)", resume_text)
+    
     return name_match.group(1) if name_match else "Not Found"
 
 # ✅ Resume Classification
